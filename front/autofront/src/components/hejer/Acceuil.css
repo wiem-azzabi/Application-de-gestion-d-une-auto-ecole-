@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300&display=swap');
+.brand-logo left{
+  font-family: 'Roboto Slab', serif;
+}
+
+a{
+  color: black !important;
+}
+.mycard{
+  margin-top:50px
+}
+.auth-card{
+  padding:20px;
+  text-align:center;
+  max-width:400px ;
+  margin: 10px auto;
+}
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(85, 123, 226) !important;
+  box-shadow: 0 1px 0 0 rgb(85, 123, 226) !important;}
+
+  .mycard2{
+    margin-top:150px
+
+  }
+  .auth-card2{
+    padding:30px;
+    text-align:center;
+    max-width:600px ;
+    margin: 10px auto;
+  }
