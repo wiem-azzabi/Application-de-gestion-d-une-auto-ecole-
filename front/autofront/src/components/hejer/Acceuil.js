@@ -1,27 +1,25 @@
 import React from 'react'
-import NavBar from './Navbar'
+import Acceuill from './Bienvenue'
 import Login from './Screens/Login'
 import Signup from './Screens/Signup'
 import More from './Screens/More'
 import { BrowserRouter, Route} from "react-router-dom";
 import AcceuilO from '../oumaima/AcceuilO'
 import './Acceuil.css'
+import Form from './Form'
 const Acceuil =()=>{
     return (
       <BrowserRouter>
         <Route exact path="/">
-          <NavBar />
+          <Acceuill />
         </Route>
         <Route path="/signup">
-          <NavBar />
           <Signup />
         </Route>
         <Route path="/login">
-          <NavBar />
-          <Login />
+          <Form/>
         </Route>
         <Route path="/more">
-          <NavBar />
           <More />
         </Route>
         <Route path="/oumaima">
