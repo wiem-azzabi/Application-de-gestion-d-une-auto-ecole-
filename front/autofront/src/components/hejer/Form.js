@@ -6,13 +6,13 @@ import './Form.css'
 export class Form extends Component {
   state = {
     step: 1,
-    nom: "",
-    prenom: "",
-    date_de_naissance: "",
+    name: "",
+    firstname: "",
+    birth: "",
     adresse: "",
     email: "",
     password: "",
-    tel: "",
+    number: "",
   };
 
   nextStep = () => {
@@ -27,17 +27,17 @@ export class Form extends Component {
 
   inputChange = (e) => {
     this.setState({
-      nom: e.target.value,
+      name: e.target.value,
     });
   };
-  inputChangeprenom = (e) => {
+  inputChangefirstname = (e) => {
     this.setState({
-      nomprenom: e.target.value,
+      firstname: e.target.value,
     });
   };
   inputChangedate = (e) => {
     this.setState({
-      date_de_naissance: e.target.value,
+      birth: e.target.value,
     });
   };
   inputChangeadresse = (e) => {
@@ -45,9 +45,9 @@ export class Form extends Component {
       adresse: e.target.value,
     });
   };
-  inputChangetel = (e) => {
+  inputChangenumber = (e) => {
     this.setState({
-      tel: e.target.value,
+      number: e.target.value,
     });
   };
   inputChangepassword = (e) => {
@@ -62,16 +62,16 @@ export class Form extends Component {
   };
   render() {
     const { step } = this.state;
-    const { nom, prenom, date_de_naissance, adresse, email, password, tel } =
+    const { name, firstname, birth, adresse, email, password, number } =
       this.state;
     const values = {
-      nom,
-      prenom,
-      date_de_naissance,
+      name,
+      firstname,
+      birth,
       adresse,
       email,
       password,
-      tel,
+      number,
     };
     switch (step) {
       case 1:
@@ -79,11 +79,11 @@ export class Form extends Component {
           <Etapee1
             nextStep={this.nextStep}
             inputChange={this.inputChange}
-            inputChangeprenom={this.inputChangeprenom}
+            inputChangefirstname={this.inputChangefirstname}
             inputChangedate={this.inputChangedate}
             inputChangeadresse={this.inputChangeadresse}
             inputChangeemail={this.inputChangeemail}
-            inputChangetel={this.inputChangetel}
+            inputChangenumber={this.inputChangenumber}
             inputChangepassword={this.inputChangepassword}
             values={values}
           />

@@ -26,6 +26,7 @@ async function handleToken(token, addresses) {
   console.log(status);
   if (status === "success") {
     toast("Succès! Vérifiez votre e-mail pour plus de détails", { type: "success" });
+    
     <div className="buttons">
     <button className="btn btn-primary" onClick={this.props.nextStep}>
       Continue

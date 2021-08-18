@@ -5,6 +5,8 @@ import Signup from './Screens/Signup'
 import More from './Screens/More'
 import { BrowserRouter, Route} from "react-router-dom";
 import AcceuilO from '../oumaima/AcceuilO'
+import AppAdmin from "../PageAdmin/AppAdmin"
+
 import './Acceuil.css'
 import Form from './Form'
 const Acceuil =()=>{
@@ -23,7 +25,8 @@ const Acceuil =()=>{
           <More />
         </Route>
         <Route path="/oumaima">
-          <AcceuilO />
+          {/* <AcceuilO /> */}
+         <AppAdmin/>
         </Route>
       </BrowserRouter>
     );

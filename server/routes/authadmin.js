@@ -1,3 +1,4 @@
+
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
@@ -6,8 +7,35 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const {JWT_SECRET}= require('../Keys')
 
-
-
+router.post('/loginadmin',(req,res)=>{
+    const {email,password} = req.body;
+    if(!email ||  !password){
+      return  res.status(422).json({error:"please add all the fields"})
+    }
+    admin.findOne({email:email}) 
+    .then((Savedadmin)=>{
+        if(Savedadmin){
+         return res.status(422).json({error:"user already exists withthat email"})
+        }  
+        bcrypt.hash(password,12)
+        .then(hashedpassword=>{ 
+            const admin = new admin({
+                email,
+                password:hashedpassword,
+            })
+       user.save()
+        .then(user=>{
+            res.json({message:"saved successfully"})
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    })   
+    })   
+    .catch(err=>{
+        console.log(err)
+})
+})
 
 router.post('/signinAdmin',(req,res) => {
     const {email,password} = req.body
