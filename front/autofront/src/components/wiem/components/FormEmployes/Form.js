@@ -58,12 +58,12 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">
           {currentId
             ? `Modifier "${employe.nom}"`
-            : "Ajouter nouvelle inscription"}
+            : "Ajouter Nouvel Employé"}
         </Typography>
         <TextField
           name="nom"
           variant="outlined"
-          label="Nom et Prenom"
+          label="Nom"
           fullWidth
           value={employeData.nom}
           onChange={(e) =>
@@ -73,7 +73,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField
           name="prenom"
           variant="outlined"
-          label="Date de l'examen"
+          label="Prénom"
           fullWidth
           value={employeData.prenom}
           onChange={(e) => setEmployeData({ ...employeData, prenom: e.target.value })}
@@ -81,10 +81,9 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField
           name="telephone"
           variant="outlined"
-          label="Cours/examen code/examen conduite"
+          label="Telephone"
           fullWidth
           multiline
-          rows={4}
           value={employeData.telephone}
           onChange={(e) =>
             setEmployeData({ ...employeData, telephone: e.target.value })
@@ -93,13 +92,14 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField
           name="poste"
           variant="outlined"
-          label="nouvelle inscription/inscrit il y a ..."
+          label="Poste "
           fullWidth
           value={employeData.poste}
           onChange={(e) =>
-            setEmployeData({ ...employeData, poste: e.target.value.split(",") })
+            setEmployeData({ ...employeData, poste: e.target.value})
           }
         />
+        <p>Photo(Format .jpg)</p>
         <div className={classes.fileInput}>
           <FileBase
             type="file"

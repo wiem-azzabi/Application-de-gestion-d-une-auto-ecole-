@@ -7,16 +7,8 @@ const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../Keys");
 
 router.post("/login", (req, res) => {
-  const { name, firstname, birth, adress, email, number, password } = req.body;
-  if (
-    !email ||
-    !name ||
-    !firstname ||
-    !birth ||
-    !adress ||
-    !number ||
-    !password
-  ) {
+  const { name, firstname, email, number, password } = req.body;
+  if (!email || !name || !firstname || !number || !password) {
     return res.status(422).json({ error: "please add all the fields" });
   }
   User.findOne({ email: email })
@@ -30,8 +22,6 @@ router.post("/login", (req, res) => {
         const user = new User({
           name,
           firstname,
-          adress,
-          birth,
           email,
           number,
           password: hashedpassword,

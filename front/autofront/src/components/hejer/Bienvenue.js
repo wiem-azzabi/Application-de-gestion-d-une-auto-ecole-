@@ -19,11 +19,14 @@ const Acceuill = () => {
           </h1>
         </Fade>
         <div className="container-btns">
-          <Link to="/login">
+          <Link to="/Signup">
             <button className="btn-first b1">S'inscrire</button>
           </Link>
-          <Link to="Signup">
+          <Link to="/Login">
             <button className="btn-first b2">Se connecter </button>
+          </Link>
+          <Link to="/Loginadmin">
+            <button className="btn-first b2">Se connecter en tant que admin </button>
           </Link>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
 
-import StarIcon from "@material-ui/icons/Star";
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
@@ -22,14 +21,15 @@ const Employe = ({ employe, setCurrentId }) => {
           employe.photo ||
           "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
         }
-        nom={employe.nom}
       />
       <div className={classes.overlay}>
-        <Typography variant="h6">{employe.prenom}</Typography>
         <Typography variant="body2">
           {moment(employe.createdAt).fromNow()}
         </Typography>
       </div>
+      <Typography variant="h6">{employe.prenom}</Typography>
+      <Typography variant="h6">{employe.nom}</Typography>
+
       <div className={classes.overlay2}>
         <Button
           style={{ color: "white" }}
@@ -50,11 +50,11 @@ const Employe = ({ employe, setCurrentId }) => {
         variant="h5"
         component="h2"
       >
-        {employe.nom}
+       Poste : {employe.poste}
       </Typography>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {employe.message}
+          Numéro de Téléphone : {employe.telephone}
         </Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>

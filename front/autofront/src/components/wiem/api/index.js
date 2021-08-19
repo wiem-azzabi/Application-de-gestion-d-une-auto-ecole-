@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const url = 'http://localhost:5000/employes';
-const url2 = 'http://localhost:5000/cars';
+const url = 'http://localhost:3001/employes';
+const url2 = 'http://localhost:3001/cars';
 
 export const fetchCars = () => axios.get(url2);
 export const createCar = (newCar) => axios.post(url2, newCar);

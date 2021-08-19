@@ -1,9 +1,19 @@
-import React from "react";
+import React ,{ useState} from "react";
+import {Checkbox} from "@material-ui/core";
 
 export default function Planification() {
+  
+const [isChecked, setIsChecked] = useState(false);
+const handleOnChange = () => {
+  setIsChecked(!isChecked);
+};
   return (
     <div className="planification">
-      <h1> planification des seances de conduite </h1>
+      <Checkbox
+        value="reparations"
+        checked={isChecked}
+        onChange={handleOnChange}
+      />
     </div>
   );
 }

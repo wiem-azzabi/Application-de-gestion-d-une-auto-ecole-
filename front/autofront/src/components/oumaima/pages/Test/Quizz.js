@@ -329,7 +329,7 @@ export default function Quizz() {
           Vous avez obtenu {score} sur {questions.length}
           <div>
             <nav>
-              <Link to="/oumaima">
+              <Link to="/client">
                 <button size="lg" className="boutonretour">
                   Retour Menu Principal
                 </button>
@@ -360,7 +360,7 @@ export default function Quizz() {
               height="150"
             />
             <div>
-              <Link to="/oumaima">
+              <Link to="/client">
                 <button size="lg" className="boutonretour">
                   Retour Menu Principal
                 </button>

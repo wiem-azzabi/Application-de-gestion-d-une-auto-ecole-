@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
+import { TextField, Button, Typography, Paper,Checkbox } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 
 import useStyles from "./styles";
 import { createCar, updateCar } from "../../actions/cars";
 
+
 const CarForm = ({ currentId, setCurrentId }) => {
   const [carData, setCarData] = useState({
     nom: "",
     etat: "",
-    assurances: "",
+    assurances: true,
     reparations: true,
     vignettes: true,
     visitetechnique: true, 
@@ -51,6 +52,11 @@ const CarForm = ({ currentId, setCurrentId }) => {
     }
   };
 
+const [isCheckedreparations, setIsCheckedreparations] = useState(true);
+const handleOnChange = () => {
+  setIsCheckedreparations(!isCheckedreparations);
+  setCarData({ ...carData, reparations: isCheckedreparations });
+};
   return (
     <Paper className={classes.paper}>
       <form
@@ -60,50 +66,52 @@ const CarForm = ({ currentId, setCurrentId }) => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">
-          {currentId
-            ? `Modifier "${car.nom}"`
-            : "Ajouter nouveau véhicule"}
+          {currentId ? `Modifier "${car.nom}"` : "Ajouter nouveau véhicule"}
         </Typography>
         <TextField
           name="nom"
           variant="outlined"
-          label="nom"
+          label="Nom/Marque/immatricule"
           fullWidth
           value={carData.nom}
-          onChange={(e) =>
-            setCarData({ ...carData, nom: e.target.value })
-          }
+          onChange={(e) => setCarData({ ...carData, nom: e.target.value })}
         />
         <TextField
           name="etat"
           variant="outlined"
-          label="etat"
+          label="Etat : (en marche / hors service)"
           fullWidth
           value={carData.etat}
           onChange={(e) => setCarData({ ...carData, etat: e.target.value })}
         />
-        {/* <Check boxes pour vignettes,visite technique...> */}
         <TextField
           name="entretien"
           variant="outlined"
-          label="entretien"
+          label="Date dernier entretien"
           fullWidth
-          multiline
-          rows={4}
           value={carData.entretien}
           onChange={(e) =>
             setCarData({ ...carData, entretien: e.target.value })
           }
         />
        
-
+        <br />
+        <br/>
+        <Checkbox
+          value="reparations"
+          checked={isCheckedreparations}
+          onChange={handleOnChange}
+        />
+        
+        <br />
+        <br />
+        {/* <Check boxes pour vignettes,visite technique...> */}
         <div className={classes.fileInput}>
+          Photo (.jpg)
           <FileBase
             type="file"
             multiple={false}
-            onDone={({ base64 }) =>
-              setCarData({ ...carData, photo: base64 })
-            }
+            onDone={({ base64 }) => setCarData({ ...carData, photo: base64 })}
           />
         </div>
         <Button

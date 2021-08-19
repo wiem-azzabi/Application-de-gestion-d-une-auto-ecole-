@@ -424,7 +424,7 @@ export default function QuizzSolution() {
             height="150"
           />
           <div>
-            <Link to="/oumaima">
+            <Link to="/client">
               <button size="lg" className="boutonretour">
                 Retour Menu Principal
               </button>

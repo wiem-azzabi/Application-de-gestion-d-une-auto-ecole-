@@ -3,17 +3,18 @@ import * as AiIcons from "react-icons/ai";
 import * as BiIcons from "react-icons/bi";
 import * as CgIcons from "react-icons/cg";
 import * as MdIcons from "react-icons/md";
+
 export const SidebarData = [
   {
-    title: "Condidat",
-    path: "/condidat",
-    icon: <AiIcons.AiFillHome />,
+    title: "Candidats",
+    path: "/candidat",
+    icon: <CgIcons.CgProfile />,
     cName: "nav-text",
   },
   {
-    title: "véhicule",
+    title: "véhicules",
     path: "/véhicule",
-    icon: <AiIcons.AiOutlineCalendar />,
+    icon: <AiIcons.AiFillCar />,
     cName: "nav-text",
   },
   {
@@ -23,21 +24,27 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "réparation",
+    title: "Réparation",
     path: "/réparation",
-    icon: <BiIcons.BiTestTube />,
+    icon: <AiIcons.AiFillTool />,
     cName: "nav-text",
   },
   {
-    title: "planification",
+    title: "Planification",
     path: "/planification",
-    icon: <MdIcons.MdPayment />,
+    icon: <AiIcons.AiFillCalendar />,
     cName: "nav-text",
   },
   {
-    title: "employé",
+    title: "Employés",
     path: "/employé",
-    icon: <MdIcons.MdPayment />,
+    icon: <CgIcons.CgProfile />,
+    cName: "nav-text",
+  },
+  {
+    title: "Se deconnecter",
+    path: "/",
+    icon: <CgIcons.CgProfile />,
     cName: "nav-text",
   },
 ];

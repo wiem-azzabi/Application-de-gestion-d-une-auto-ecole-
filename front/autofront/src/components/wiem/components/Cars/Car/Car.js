@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 
 import StarIcon from "@material-ui/icons/Star";
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -18,15 +18,16 @@ const Car = ({ car, setCurrentId }) => {
       <CardMedia
         className={classes.media}
         image={
-          car.selectedFile ||
+          car.photo ||
           "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
         }
-        etat={car.etat}
       />
       <div className={classes.overlay}>
-        <Typography variant="h6">{car.nom}</Typography>
         <Typography variant="body2">
           {moment(car.createdAt).fromNow()}
+        </Typography>
+        <Typography variant="body2">
+          reparations : {car.reparations.toString()}
         </Typography>
       </div>
       <div className={classes.overlay2}>
@@ -38,31 +39,17 @@ const Car = ({ car, setCurrentId }) => {
           <MoreHorizIcon fontSize="default" />
         </Button>
       </div>
-      <div className={classes.details}>
-        <Typography variant="body2" color="textSecondary" component="h2">
-          {car.entretien}
-        </Typography>
-      </div>
-      <Typography
-        className={classes.title}
-        gutterBottom
-        variant="h5"
-        component="h2"
-      >
-        {car.nom}
-      </Typography>
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {car.etat}
-        </Typography>
-      </CardContent>
+      <Typography variant="h6"> Véhicule : {car.nom}</Typography>
+      <Typography variant="h6">Etat : {car.etat}</Typography>
+      <Typography variant="h6"> Dernier Entretien : {car.entretien}</Typography>
+
       <CardActions className={classes.cardActions}>
         <Button
           size="small"
           color="primary"
           onClick={() => dispatch(reportCar(car._id))}
         >
-          <StarIcon fontSize="small" /> {car.reportCount} Alerte(s){" "}
+          <StarIcon fontSize="small" /> {car.reportCount} Accident(s)
         </Button>
         <Button
           size="small"
@@ -74,6 +61,7 @@ const Car = ({ car, setCurrentId }) => {
       </CardActions>
     </Card>
   );
+ 
 };
 
 export default Car;

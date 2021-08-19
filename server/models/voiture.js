@@ -10,6 +10,7 @@ const voitureSchema = new mongoose.Schema({
   reparations: {
     type: Boolean,
     // required: true,
+    
   },
   assurances: {
     type: Boolean,
@@ -35,10 +36,10 @@ const voitureSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
-  photo:{
+  photo: {
     type: String,
-    default:"",
-  }
+    default: "",
+  },
 });
 
 mongoose.model("voiture", voitureSchema);

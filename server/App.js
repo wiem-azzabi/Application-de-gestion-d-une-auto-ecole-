@@ -13,7 +13,7 @@ app.use(morgan("tiny"));
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
 const { MONGOURI } = require("./keys");
 
 mongoose.connect(MONGOURI, {
@@ -37,6 +37,7 @@ app.use(require("./routes/auth"));
 app.use(require("./routes/authadmin"));
 app.use(require("./routes/voitureroute"));
 app.use(require("./routes/employesroute"));
+app.use(require("./routes/payment"));
 
 app.listen(port, () => {
   console.log("server is running on", port);

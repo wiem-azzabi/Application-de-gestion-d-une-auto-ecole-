@@ -1,32 +1,41 @@
 import React from 'react'
+import { BrowserRouter, Route } from "react-router-dom";
 import Acceuill from './Bienvenue'
-import Login from './Screens/Login'
-import Signup from './Screens/Signup'
-import More from './Screens/More'
-import { BrowserRouter, Route} from "react-router-dom";
-import AcceuilO from '../oumaima/AcceuilO'
-import AppAdmin from "../PageAdmin/AppAdmin"
 
-import './Acceuil.css'
-import Form from './Form'
+import Login from "./Screens/Login";
+import LoginAdmin from "./Screens/LoginAdmin";
+
+import AppClient from "../oumaima/AppClient";
+import AppAdmin from "../PageAdmin/AppAdmin";
+
+import Etapee1 from "./Screens/Etape1";
+import Etape2 from "./Screens/Etape2";
+
+import "./Acceuil.css";
+
 const Acceuil =()=>{
     return (
       <BrowserRouter>
         <Route exact path="/">
           <Acceuill />
         </Route>
-        <Route path="/signup">
-          <Signup />
+        <Route eact path="/Login">
+          <Login />
         </Route>
-        <Route path="/login">
-          <Form/>
+        <Route exact path="/Loginadmin">
+          <LoginAdmin />
         </Route>
-        <Route path="/more">
-          <More />
+        <Route exact path="/Signup">
+          <Etapee1 />
         </Route>
-        <Route path="/oumaima">
-          {/* <AcceuilO /> */}
-         <AppAdmin/>
+        <Route exact path="/payement">
+          <Etape2 />
+        </Route>
+        <Route exact path="/client">
+          <AppClient />
+        </Route>
+        <Route exact path="/admin">
+          <AppAdmin />
         </Route>
       </BrowserRouter>
     );

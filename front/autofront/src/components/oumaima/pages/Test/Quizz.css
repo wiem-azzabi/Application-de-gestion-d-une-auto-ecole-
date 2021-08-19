@@ -1,6 +1,6 @@
 .quizz {
-  color:#ffffff;
-  background-color: #111936;
+  color: #ffffff;
+  background-color: #3b3b3d;
   width: 500px;
   min-height: 200px;
   height: min-content;
@@ -9,7 +9,7 @@
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
-  margin:auto;
+  margin: auto;
 }
 
 .score-section {
@@ -22,7 +22,7 @@
 .question-section {
   width: 100%;
   position: relative;
-  color:white;
+  color: white;
 }
 
 .question-count {
@@ -59,36 +59,40 @@ button {
   width: 100%;
   font-size: 16px;
   color: #ffffff;
-  background-color: #252d4a;
+  background-color: #3b3b3d;
   border-radius: 15px;
   display: flex;
   padding: 5px;
   justify-content: flex-start;
   align-items: center;
-  border: 5px solid #234668;
+  border: 1px solid  rgb(175, 131, 74);
   cursor: pointer;
 }
 
 .correct {
   background-color: #2f922f;
+    outline: none;
+
 }
 
 .incorrect {
   background-color: #ff3333;
-}
-.boutonretour{
-  background-color:rgb(0, 90, 60);
-  color: white;
+    outline: none;
 
+}
+.boutonretour {
+  background-color: rgb(0, 90, 60);
+  color: white;
 }
 
 button:hover {
   background-color: #555e7d;
+    outline: none;
 }
 
 button:focus {
-  outline: none;
-  background-color: #252d4a;
+  background-color: #3b3b3d;
+
 }
 
 button svg {
