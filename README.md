@@ -1,4 +1,5 @@
-#See Master Branch
+See Master Branch
+# Application web pour la gestion d'une auto-école
 Cette application est conçue dans le cadre d'un projet d'été à l'ENSI (Ecole Nationale des Sciences de l'Informatique )
 Il s'agit d'une application web pour la gestion d'une auto-école developpée avec la MERN stack.
 l'application est destinée aux bureaux d'auto-école. Elle permet :
